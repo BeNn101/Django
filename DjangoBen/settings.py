@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from Voyages.backends import UtilisateurBackend
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,6 +82,10 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    'Voyages.backends.UtilisateurBackend',  # Spécifiez le chemin vers votre backend d'authentification personnalisé
+    'django.contrib.auth.backends.ModelBackend',  # Conservez également le backend par défaut pour l'authentification admin
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

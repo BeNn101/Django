@@ -1,5 +1,5 @@
 from django import forms
 
 class ConnexionForm(forms.Form):
-    email = forms.EmailField(label='Adresse e-mail')
+    username = forms.CharField(label='username')
     password = forms.CharField(label='Mot de passe', widget=forms.PasswordInput)

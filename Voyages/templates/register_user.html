@@ -1,0 +1,16 @@
+
+{% if form.errors %}
+
+<p> There is a errors here</p>
+
+{% endif %}
+    <h1> Inscription</h1>
+</br>
+
+
+
+    <form action="{% url 'Voyages:register_user' %}" method="POST">
+        {% csrf_token %}
+
+        {{ form }}
+
