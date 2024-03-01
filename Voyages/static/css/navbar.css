@@ -1,0 +1,63 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-size : 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-size : 20px;
+}
+
+.nav-item {
+    position: relative;
+    text-decoration: none;
+    color: black; 
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white; /* Couleur de la bordure par défaut */
+    transition: width 0.3s; /* Transition pour l'animation */
+}
+
+/* Animation de la bordure inférieure lorsque l'élément est survolé */
+.nav-item:hover::after {
+    width: 100%;
+    color : white;
+}
+
+
+.nav-item.selected::after {
+    width: 100%;
+    color : white;
+}
+
+
+.nav-item.selected {
+    font-weight: bold; /* Style de police en gras */
+    color: white; /* Couleur du texte sélectionné */
+}

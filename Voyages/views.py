@@ -38,7 +38,7 @@ def register_user(request):
             login(request,user)
             messages.success (request , ("Vous avez bien été enregistrer")) 
             
-            return redirect ('')
+            return redirect ('Voyages:connexion')
     else : 
         form = UserCreationForm()
     return render(request, 'register_user.html' , {'form':form})
